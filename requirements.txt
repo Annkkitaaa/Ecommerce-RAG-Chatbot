@@ -1,0 +1,19 @@
+# Core dependencies
+fastapi==0.95.1
+uvicorn==0.22.0
+pandas==2.0.1
+requests==2.30.0
+python-dotenv==1.0.0
+
+# Machine Learning and NLP
+transformers==4.29.2
+torch==2.0.1
+sentence-transformers==2.2.2
+
+# Development and Testing
+pytest==7.3.1
+jupyter==1.0.0
+
+# Optional for advanced features
+openai==0.27.7
+huggingface_hub==0.14.1

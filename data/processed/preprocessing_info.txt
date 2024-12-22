@@ -1,0 +1,6 @@
+timestamp: 2024-12-14T20:17:34.177221
+product_count: 3734
+order_count: 51288
+embedding_shape: (3734, 384)
+product_columns: ['Product_ID', 'Product_ID', 'Product_Title', 'Description', 'Category', 'Price', 'Price', 'Rating', 'Rating', 'Rating_Count', 'Rating_Count', 'Store', 'feature_list', 'combined_text']
+order_columns: ['Order_ID', 'Order_DateTime', 'Customer_Id', 'Gender', 'Device_Type', 'Customer_Login_type', 'Product_Category', 'Product', 'Quantity', 'Sales', 'Total_Amount', 'Discount', 'Profit', 'Net_Profit', 'Shipping_Cost', 'Order_Priority', 'Payment_method']
