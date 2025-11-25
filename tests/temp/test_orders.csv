@@ -1,6 +1,0 @@
-Order_ID,Customer_Id,Product_Category,Order_Date,Sales,Shipping_Cost,Order_Priority
-1,1001,Guitars,2024-01-01,999.99,25.0,High
-2,1001,Accessories,2024-01-15,29.99,5.0,Low
-3,1002,Guitars,2024-01-20,599.99,25.0,Medium
-4,1002,Microphones,2024-02-01,299.99,15.0,High
-5,1003,Drums,2024-02-15,1499.99,50.0,Medium

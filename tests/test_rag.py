@@ -55,6 +55,7 @@ def sample_data():
     order_data = {
         'Order_ID': range(1, 6),
         'Customer_Id': [1001, 1001, 1002, 1002, 1003],
+        'Product': ['Electric Guitar Pro', 'Guitar Strings Pack', 'Bass Guitar Beginner', 'Professional Microphone', 'Drum Set Complete'],
         'Product_Category': ['Guitars', 'Accessories', 'Guitars', 'Microphones', 'Drums'],
         'Order_Date': [
             '2024-01-01',
@@ -62,6 +63,13 @@ def sample_data():
             '2024-01-20',
             '2024-02-01',
             '2024-02-15'
+        ],
+        'Time': [
+            '10:30:00',
+            '14:45:00',
+            '09:15:00',
+            '16:20:00',
+            '11:00:00'
         ],
         'Sales': [999.99, 29.99, 599.99, 299.99, 1499.99],
         'Shipping_Cost': [25.00, 5.00, 25.00, 15.00, 50.00],
