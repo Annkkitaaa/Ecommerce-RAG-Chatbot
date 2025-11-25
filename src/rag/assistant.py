@@ -24,6 +24,20 @@ class ECommerceRAG:
         self.product_df.fillna('', inplace=True)
         self.order_df.fillna('', inplace=True)
 
+        # Handle both raw and processed product data formats
+        if 'Product_Title' not in self.product_df.columns:
+            # Raw format: map column names
+            column_mapping = {
+                'title': 'Product_Title',
+                'average_rating': 'Rating',
+                'description': 'Description',
+                'price': 'Price',
+                'parent_asin': 'Product_ID'
+            }
+            for old_col, new_col in column_mapping.items():
+                if old_col in self.product_df.columns:
+                    self.product_df[new_col] = self.product_df[old_col]
+
         # Handle both raw and processed order data formats
         if 'Order_DateTime' not in self.order_df.columns:
             # Raw format: combine Order_Date and Time
