@@ -10,12 +10,12 @@ settings = Settings()
 # Load order data
 try:
     ORDER_DF = pd.read_csv(settings.ORDER_DATA_PATH)
-    # Fill NaN values appropriately by dtype
+    # Fill NaN values appropriately by dtype (avoid chained assignment warning)
     for col in ORDER_DF.columns:
         if ORDER_DF[col].dtype == 'object':
-            ORDER_DF[col].fillna('', inplace=True)
+            ORDER_DF[col] = ORDER_DF[col].fillna('')
         else:
-            ORDER_DF[col].fillna(0, inplace=True)
+            ORDER_DF[col] = ORDER_DF[col].fillna(0)
     print(f"Successfully loaded orders data from {settings.ORDER_DATA_PATH}")
 except Exception as e:
     print(f"Error loading orders data: {str(e)}")
