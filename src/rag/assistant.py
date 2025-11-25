@@ -23,7 +23,22 @@ class ECommerceRAG:
         """Preprocess datasets"""
         self.product_df.fillna('', inplace=True)
         self.order_df.fillna('', inplace=True)
-        self.order_df['Order_DateTime'] = pd.to_datetime(self.order_df['Order_DateTime'])
+
+        # Handle both raw and processed order data formats
+        if 'Order_DateTime' not in self.order_df.columns:
+            # Raw format: combine Order_Date and Time
+            if 'Order_Date' in self.order_df.columns and 'Time' in self.order_df.columns:
+                self.order_df['Order_DateTime'] = pd.to_datetime(
+                    self.order_df['Order_Date'].astype(str) + ' ' +
+                    self.order_df['Time'].astype(str)
+                )
+            else:
+                logger.warning("Order data missing datetime information")
+                return
+        else:
+            # Processed format: just convert to datetime
+            self.order_df['Order_DateTime'] = pd.to_datetime(self.order_df['Order_DateTime'])
+
         self.order_df = self.order_df.sort_values('Order_DateTime', ascending=False)
     
     def _create_product_embeddings(self):
