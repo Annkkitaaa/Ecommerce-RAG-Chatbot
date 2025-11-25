@@ -21,8 +21,14 @@ class ECommerceRAG:
     
     def _preprocess_data(self):
         """Preprocess datasets"""
-        self.product_df.fillna('', inplace=True)
-        self.order_df.fillna('', inplace=True)
+        # Fill NaN values by dtype to avoid warnings
+        for col in self.product_df.columns:
+            if self.product_df[col].dtype == 'object':
+                self.product_df[col] = self.product_df[col].fillna('')
+
+        for col in self.order_df.columns:
+            if self.order_df[col].dtype == 'object':
+                self.order_df[col] = self.order_df[col].fillna('')
 
         # Handle both raw and processed product data formats
         if 'Product_Title' not in self.product_df.columns:
