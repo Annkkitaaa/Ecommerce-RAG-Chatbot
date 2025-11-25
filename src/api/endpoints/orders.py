@@ -1,7 +1,6 @@
 from fastapi import APIRouter, HTTPException, Query
-from typing import List, Dict, Any, Optional
+from typing import List, Dict, Any
 import pandas as pd
-from datetime import datetime
 from ...config import Settings
 
 router = APIRouter()
